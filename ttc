@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+wget https://us.tamrieltradecentre.com/download/PriceTable -O PriceTable.zip
+unzip PriceTable.zip -d ./PriceTable/
+mkdir -p ~/Documents/Elder\ Scrolls\ Online/live/AddOns/TamrielTradeCentre/
+cp ./PriceTable/*.lua ~/Documents/Elder\ Scrolls\ Online/live/AddOns/TamrielTradeCentre/
+rm PriceTable.zip
+rm -rf PriceTable
