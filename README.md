@@ -8,6 +8,16 @@ Need to run up this script before start up Elder Scroll Online
 
 1. create folder `bin` in /Users/yourname/
 2. download all files and put them under /Users/yourname/bin
+```bash
+mkdir -p ~/bin
+cd ~/bin
+wget https://github.com/kelvinjjwong/tamrieltradecentre-mac-shell/archive/refs/heads/main.zip -O ttc.zip
+unzip ttc.zip -d ./
+mv tamrieltradecentre-mac-shell-main/* .
+rm -rf tamrieltradecentre-mac-shell-main/
+rm -f ttc.zip
+``` 
+
 3. grant executable permission to these files by using below commands in console:
 ```bash
 cd ~/bin
@@ -15,6 +25,7 @@ chmod +x ttc
 chmod +x ttc-auto
 chmod +x ttc-upload
 ```
+
 4. run `ttc-auto` each time before running ESO. Or you could create a shortcut icon for it in macOS desktop somewhere
 
 ## install for ttc-upload
