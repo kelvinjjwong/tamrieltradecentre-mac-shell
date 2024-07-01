@@ -1,0 +1,48 @@
+export http_proxy=
+export https_proxy=
+export all_proxy=
+export HTTP_PROXY=
+export HTTPS_PROXY=
+export ALL_PROXY=
+
+if [ "`python --version 2>/dev/null`" = ""  ]; then
+    echo "Unable to locate 'python', Please install first: https://www.python.org/downloads/"
+    echo
+    exit 0;
+fi
+
+if [ ! -e ttc-upload-python-env.txt ]; then
+    echo "Missing ttc-upload-python-env.txt , please re-download me."
+    echo
+    exit 0;
+fi
+
+if [ ! -e ~/Documents/Elder\ Scrolls\ Online/live/SavedVariables/TamrielTradeCentre.lua ]; then
+    echo "It looks like TTC plugin has not yet run up in your ESO game."
+    echo "otherwise please input /reloadui in the chat box."
+    echo
+    exit 0;
+fi
+
+if [ -e ttc-upload-env/bin/activate ]; then
+    chmod +x ttc-upload-env/bin/activate
+    source ttc-upload-env/bin/activate
+else
+    python -m venv ttc-upload-env
+    chmod +x ttc-upload-env/bin/activate
+    source ttc-upload-env/bin/activate
+    pip install -r ttc-upload-python-env.txt
+fi
+TOKEN=`md5 ~/Documents/Elder\ Scrolls\ Online/live/SavedVariables/TamrielTradeCentre.lua | awk -F' = ' '{print $NF}'`
+OLD_TOKEN=`cat /tmp/eso-ttc-lua-md5 2>/dev/null`
+echo "NEW: ${TOKEN}"
+echo "OLD: ${OLD_TOKEN}"
+if [ "$TOKEN" != "$OLD_TOKEN"  ]; then
+    python upload.py
+    echo "$TOKEN" > /tmp/eso-ttc-lua-md5
+else
+    echo "LUA file no change. no need to upload"
+    sleep 2
+fi
+deactivate
+
