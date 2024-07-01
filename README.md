@@ -30,8 +30,11 @@ chmod +x ttc-upload
 
 ## install for ttc-upload
 
-1. install python, recommend use `brew install python` or you can download pkg file from `https://www.python.org/downloads/`
-2. ensure `python` can be located in environment variable `$PATH`, you can verifiy by using `python --version`
-3. `ttc-upload` is included in `ttc-auto` already.
+1. install Google Chrome browser
+2. install python, recommend use `brew install python` or you can download pkg file from `https://www.python.org/downloads/`
+3. ensure `python` can be located in environment variable `$PATH`, you can verifiy by using `python --version`
 
-#Tested with macOS 14 Sonama and Python 3.12#
+- `ttc-upload` is included in `ttc-auto` already.
+- this script will launch a Chrome browser window/tab and access TTC web client `https://us.tamrieltradecentre.com/pc/Trade/WebClient` to upload the LUA file automatically if the file has changes. 
+
+#Tested with macOS 14 Sonama, Chrome 126.0 and Python 3.12#
