@@ -2,6 +2,8 @@
 
 This is mac shell version for https://us.tamrieltradecentre.com
 
+It only follows instructions from TTC official page `https://us.tamrieltradecentre.com/pc/Trade/WebClient` , nothing special here.
+
 Need to run up this script before start up Elder Scroll Online
 
 ## install
