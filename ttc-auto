@@ -1,1 +1,1 @@
-date;~/bin/ttc; while sleep 60; do echo;date;~/bin/ttc; done
+date;~/bin/ttc; while sleep 60; do echo;date;~/bin/ttc;cd ~/bin;./ttc-upload; done
