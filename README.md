@@ -40,3 +40,20 @@ chmod +x ttc-upload
 - this script will launch a Chrome browser window/tab and access TTC web client `https://us.tamrieltradecentre.com/pc/Trade/WebClient` to upload the LUA file automatically if the file has changes. 
 
 #Tested with macOS 14 Sonama, Chrome 126.0 and Python 3.12#
+
+## known issue
+
+### THIRD_PARTY_NOTICES.chromedriver - Exec format error - undetected_chromedriver
+
+Refer to: https://stackoverflow.com/questions/78806812/third-party-notices-chromedriver-exec-format-error-undetected-chromedriver
+
+```bash
+source ttc-upload-env/bin/activate
+
+rm -rf /home/user/.wdm
+pip uninstall webdriver-manager
+pip install webdriver-manager
+
+pip freeze > ttc-upload-python-env.txt
+deactivate
+```
