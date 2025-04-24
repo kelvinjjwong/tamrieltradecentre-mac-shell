@@ -50,7 +50,7 @@ Refer to: https://stackoverflow.com/questions/78806812/third-party-notices-chrom
 ```bash
 source ttc-upload-env/bin/activate
 
-rm -rf /home/user/.wdm
+rm -rf ~/.wdm
 pip uninstall webdriver-manager
 pip install webdriver-manager
 
